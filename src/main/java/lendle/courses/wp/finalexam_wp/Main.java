@@ -106,7 +106,9 @@ public class Main extends javax.swing.JFrame {
         DefaultListModel model = (DefaultListModel) this.jList1.getModel();
         if (model.contains(title)) {
             //Q1: 開啟 message dialog （10%）
-            
+            public static void showMessageDialog(Cmponent parentComponent,
+                    Object message)
+                        throws HeadlessException
             ////////////////////
             return;
         }
@@ -114,7 +116,13 @@ public class Main extends javax.swing.JFrame {
         model.addElement(title);
         //Q2: 建立 TaskFrame（等同於 JInternalFrame）
         //加到 jDesktopPane1 (20%)
+        JFrame frame = new JFrame();
+        frame.setDeafaultCloseOperation(WindowsConstants.DISPOSE_ON_CLASS);
+        frame.setLayout(new Border Layout());
         
+        JDesktopPane1= new JDesktopPane();
+        frame.setContentPane(desktop);
+
         ///////////////////////////////////////
     }//GEN-LAST:event_buttonNewActionPerformed
 
@@ -133,7 +141,12 @@ public class Main extends javax.swing.JFrame {
             //Q3: 建立 TaskFrame（等同於 JInternalFrame）
             //設定 noteTitle, noteContent
             //加到 jDesktopPane1 (20%)
-            
+            JFrame frame = new JFrame();
+            frame.setDeafaultCloseOperation(WindowsConstants.DISPOSE_ON_CLASS);
+            frame.setLayout(new Border Layout());
+
+            JDesktopPane1= new JDesktopPane();
+            frame.setContentPane(desktop);
             //////////////////////////////////////////
         }
     }//GEN-LAST:event_jList1MouseClicked

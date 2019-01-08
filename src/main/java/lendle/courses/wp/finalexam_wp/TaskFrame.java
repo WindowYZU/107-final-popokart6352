@@ -38,10 +38,15 @@ public class TaskFrame extends JInternalFrame {
         //Q4: layout 出如圖所示的樣子，
         //記得 JTextArea 要放在捲軸裡面 (30%)
         ////////////////////////////
+        Jframe frame = new Jframe();
+        frame.setsize(500,500);
+        frame.setDefaultCloseOperation(WindowsConstants.DISPOSE_ON_CLOSE);
+        frame.setLayout(layout);
         this.setClosable(true);
         this.setResizable(true);
         this.setVisible(true);
-
+        JTextArea TextArea = new JTextArea("center");
+        
         JPanel southPanel = new JPanel();
         this.add(southPanel, "South");
         JButton saveButton = new JButton("Save");
@@ -69,6 +74,26 @@ public class TaskFrame extends JInternalFrame {
             public void internalFrameClosing(InternalFrameEvent e) {
                 if (modified) {
                     //Q5: 發現變更，顯示 confirm dialog 詢問是否要儲存 (20%)
+                    JFrame frame = new JFrame();
+                    frame.setDeafaultCloseOperation(WindowsConstants.DISPOSE_ON_CLASS);
+                    
+                    JButton bt = new JButton("click");
+                    bt.addActionListener(new ActionListener);{
+                        @Override
+                    public void action performed(Action Event e){
+                        int ret = JOpitonPain.showConfirmDialog(frame,"OK");
+                        if  ret == JOpitonPain.OK_OPTION{
+                            JOpitonPain.showConfirmDialog(frame,"YOU CLICK OK!");
+                        }else if(ret == JOpitonPain.NO_OPTION){
+                            JOpitonPain.showConfirmDialog(frame,"YOU CLICK NO!");
+                        }else if(ret == JOpitonPain.CANCEL_OPTION){
+                            JOpitonPain.showConfirmDialog(frame,"YOU CLICK CANCEL!");
+                        }
+                    }
+                }};
+                frame.add(bt);
+                frame.SetSize(500,500);
+                frame.setVisible(true);
                     int ret = -1;
                     /////////////////////////////////////////////
                     if (ret == JOptionPane.YES_OPTION) {
